@@ -1,3 +1,10 @@
+:root {
+    --primary: #0A192F;
+    --secondary: #112240;
+    --text: #CCD6F6;
+    --accent: #64FFDA;
+    --details: #1E3A8A;
+}
 /* الأساسيات */
 * {
     margin: 0;
@@ -6,12 +13,16 @@
     font-family: 'Tajawal', sans-serif;
 }
 
+   
+html { scroll-behavior: smooth; }
+
 body {
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: var(--primary);
+    color: var(--text);
     overflow-x: hidden;
     position: relative;
 }
+
 
 /* الخلفية الكهربائية */
 .electric-background {
@@ -20,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     z-index: -1;
 }
 
@@ -61,9 +72,9 @@ header {
 }
 
 .header-box {
+    background: var(--details);
     width: 60px;
     height: 60px;
-    background: #4a6fa5;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -93,7 +104,7 @@ header {
 }
 
 .header-content a {
-    color: white;
+  color: var(--text);
     text-decoration: none;
     font-weight: 500;
     padding: 5px 10px;
@@ -102,7 +113,7 @@ header {
 }
 
 .header-content a:hover {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(100, 255, 218, 0.2);
 }
 
 /* قسم من أنا */
@@ -125,14 +136,15 @@ header {
 }
 
 .social-icon {
+      background: var(--secondary);
+    color: var(--accent);
+    border: 1px solid var(--accent);
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
     font-size: 1.2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -141,8 +153,8 @@ header {
 }
 
 .social-icon:hover {
-    transform: translateY(-5px);
-    color: white;
+  background: var(--accent);
+    color: var(--primary);
 }
 
 .social-icon::before {
@@ -176,7 +188,7 @@ header {
 .about-text h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: #2c3e50;
+     color: var(--accent);
 }
 
 .skills {
@@ -186,9 +198,11 @@ header {
 }
 
 .skill {
+     background: var(--secondary);
+    color: var(--accent);
+    border: 1px solid var(--accent);
     font-size: 1.5rem;
     padding: 10px 20px;
-    background: white;
     border-radius: 30px;
     display: inline-block;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -199,6 +213,8 @@ header {
 
 .skill:hover {
     transform: translateX(10px);
+     background: var(--accent);
+    color: var(--primary);
 }
 
 .skill::before {
@@ -235,11 +251,10 @@ header {
     width: 80%;
     max-width: 400px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
     transition: transform 0.3s ease;
-    /* التعديلات الجديدة */
     background: transparent;
-    border: none;
+        border:  var(--accent);
     outline: none;
     -webkit-backface-visibility: hidden;
     image-rendering: -webkit-optimize-contrast;
@@ -288,13 +303,6 @@ header {
     box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
 }
 
-.project-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .project-back p {
     margin-bottom: 15px;
     font-size: 1rem;
@@ -337,7 +345,8 @@ header {
 }
 
 .project-front {
-    background: white;
+   background: var(--secondary);
+    border: 1px solid var(--accent);
     display: flex;
     flex-direction: column;
     transform: rotateY(0deg);
@@ -357,14 +366,18 @@ header {
 }
 
 .project-back {
-    background: linear-gradient(135deg, #4a6fa5 0%, #6a5acd 100%);
-    color: white;
+     background: linear-gradient(135deg, var(--details) 0%, var(--secondary) 100%);
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg);
     padding: 20px;
     text-align: center;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #work {
     min-height: 100vh;
@@ -467,12 +480,13 @@ header {
 .contact-card {
     width: 100%;
     max-width: 800px;
-    background: white;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+     background: var(--secondary);
+      border: 1px solid var(--accent);
 }
 
 .contact-card::before {
@@ -500,25 +514,27 @@ header {
 }
 
 .contact-item {
+      background: rgba(30, 58, 138, 0.3);
+    color: var(--text);
+    border: 1px solid var(--accent);
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
-    background: white;
+    background: rgba(100, 255, 218, 0.1);
 }
 
 .contact-item i {
+    background: var(--accent);
+    color: var(--primary);
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #4a6fa5 0%, #6a5acd 100%);
-    color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -533,7 +549,8 @@ header {
 
 /* الفوتر */
 footer {
-    background: #2c3e50;
+        background: var(--secondary);
+    border-top: 1px solid var(--accent);
     color: white;
     text-align: center;
     padding: 20px;
@@ -542,6 +559,7 @@ footer {
 
 /* تأثير الجسيمات */
 #particles-js {
+        --particle-color: var(--accent);
     position: fixed;
     top: 0;
     left: 0;
